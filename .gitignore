@@ -1,0 +1,9 @@
+# 本地机位与密钥（勿提交）
+config/mantis_data.env
+config/my-robot.yaml
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+*.swp
+*~

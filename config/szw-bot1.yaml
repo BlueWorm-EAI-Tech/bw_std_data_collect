@@ -1,0 +1,91 @@
+ros:
+  domain_id: 0
+robot:
+  id: bw_robot
+  namespace: /MANTIS_ROBOT
+  read_only: false
+  enable_chassis: false
+  topics:
+    joint_state: joint_states_fdb
+    joint_state_candidates:
+    - joint_states_fdb_V2
+    - joint_states_fdb_V3
+    record_action: Teleop/joint_angle_solution/smooth
+    record_action_candidates:
+    - Teleop/joint_angle_solution
+    - ctrl/joint_target
+    - input/sdk/joint_states
+    - input/vr/joint_states
+    - input/action_studio/joint_states
+    gripper: Teleop/gripper_pos
+    gripper_candidates:
+    - input/sdk/gripper_pos
+    - input/vr/gripper_pos
+    - input/action_studio/gripper_pos
+    record_cmd_vel: Teleop/cmd_vel
+    record_cmd_vel_candidates:
+    - input/sdk/cmd_vel
+    - input/action_studio/cmd_vel
+    - input/teleop/cmd_vel
+cameras:
+  backend: ros2
+  allow_fallback_frames: false
+  left_serial: '335122270917'
+  right_serial: '260322279568'
+  env_serial: '152222071548'
+  env_device: auto
+  d405_enable_auto_exposure: null
+  d405_exposure_us: null
+  d405_gain: null
+  enable_h264: false
+  h264_bitrate_kbps: 1500
+  use_vaapi: true
+  startup_timeout_s: 25.0
+  realsense_initial_reset: true
+  launch_stagger_s: 1.0
+  streams:
+    env_cam:
+      source: ros2
+      topic: /env_camera/image_jpeg
+      raw_topic: /env_camera/image_raw
+      compressed_topic: /env_camera/image_jpeg
+      transport: compressed
+      width: 640
+      height: 480
+      fps: 30
+      encoding: bgr8
+      jpeg_quality: 85
+      warmup_timeout_s: 15.0
+      require_first_frame: true
+    left_wrist_cam:
+      source: ros2
+      topic: /camera/left_d405/color/image_jpeg
+      raw_topic: /camera/left_d405/color/image_raw
+      compressed_topic: /camera/left_d405/color/image_jpeg
+      transport: compressed
+      width: 640
+      height: 480
+      fps: 30
+      encoding: rgb8
+      jpeg_quality: 85
+      warmup_timeout_s: 15.0
+      require_first_frame: true
+    right_wrist_cam:
+      source: ros2
+      topic: /camera/right_d405/color/image_jpeg
+      raw_topic: /camera/right_d405/color/image_raw
+      compressed_topic: /camera/right_d405/color/image_jpeg
+      transport: compressed
+      width: 640
+      height: 480
+      fps: 30
+      encoding: rgb8
+      jpeg_quality: 85
+      warmup_timeout_s: 15.0
+      require_first_frame: true
+dataset:
+  root: /home/mantis/mantis_data/runtime
+  repo_prefix: local/bw_runtime
+  fps: 30.0
+  video_codec: libx264
+  task: Collect a teleoperated bimanual manipulation demonstration.

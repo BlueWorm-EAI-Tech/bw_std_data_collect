@@ -1,0 +1,5 @@
+# Install on the robot host (not shipped in this package):
+# - Ubuntu 22.04 + ROS 2 Humble + rclpy
+# - Python 3.10
+# - lerobot>=0.4.4,<0.5
+# - numpy, opencv-python, pyyaml
