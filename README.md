@@ -1,6 +1,6 @@
 # bw_std_data_collect
 
-BlueWorm 标准数据采集客户端（**闭源二进制**交付）。仓库内只有 Nuitka 编译的 `.so`、薄 shell 入口与示例配置，**不含 Python 源码**，也不捆绑 lerobot / ROS 2。
+BlueWorm 标准数据采集客户端。仓库内只有 Nuitka 编译的 `.so`、薄 shell 入口与示例配置，不包含 lerobot / ROS 2。
 
 当前版本见 `VERSION`（`0.2.0-closed`）。
 
